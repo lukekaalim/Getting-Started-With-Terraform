@@ -1,0 +1,10 @@
+{
+  "private": false,
+  "dependencies": {
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "@lukekaalim/act": "^2.0.3",
+    "@lukekaalim/act-web": "^0.3.0"
+  }
+}

@@ -1,0 +1,12 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='https://unpkg.com/@lukekaalim/act\?module' -> '@lukekaalim/act'
+module.name_mapper='https://unpkg.com/@lukekaalim/act-web\?module' -> '@lukekaalim/act-web'
+[strict]
