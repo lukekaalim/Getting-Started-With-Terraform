@@ -3,13 +3,15 @@
 import { h, useState, useEffect } from 'https://unpkg.com/@lukekaalim/act?module';
 
 /*::
+export type SlideComponent = Component<{| active: boolean, style: { +[string]: string } |}>;
+
 export type Slide = {
   title: string,
-  component: Component<{| active: boolean, style: { +[string]: string } |}>,
+  component: SlideComponent,
 };
 
 export type SlideshowProps = {|
-  slides: Slide[],
+  slides: SlideComponent[],
   currentIndex: number,
 |};
 */
@@ -43,7 +45,7 @@ const articleStyle = {
 export const SlideShow/*: Component<SlideshowProps>*/ = ({ slides, currentIndex }) => {
   return h('article', { style: articleStyle }, [
     ...slides.map((slide, slideIndex) =>
-      h(slide.component, { active: currentIndex === slideIndex, style: getSlideStyle(currentIndex, slideIndex) }))
+      h(slide, { active: currentIndex === slideIndex, style: getSlideStyle(currentIndex, slideIndex) }))
   ])
 };
 

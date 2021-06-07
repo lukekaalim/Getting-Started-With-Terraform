@@ -4,6 +4,7 @@ import { h } from 'https://unpkg.com/@lukekaalim/act?module';
 import { useSlideIndex } from './hooks.js';
 import { SlideShow } from './slideshow.js';
 import { slides as whatIsTerraformSlides } from './chapters/whatIsTerraform.js';
+import { ScrolledSVG, Vector2 } from './animation.js';
 
 const TitleSlide = ({ active, style }) => {
   return [
@@ -31,8 +32,8 @@ const ContentsCheckpointSlide = ({ style }) => {
 };
 
 const slides = [
-  { title: 'Title', component: TitleSlide },
-  { title: 'Contents', component: ContentsCheckpointSlide },
+  TitleSlide,
+  ContentsCheckpointSlide,
   ...whatIsTerraformSlides,
 ];
 
