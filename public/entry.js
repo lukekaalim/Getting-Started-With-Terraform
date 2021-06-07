@@ -12,8 +12,8 @@ const TitleSlide = ({ active, style }) => {
       h('h1', { style: { color: 'black', textAlign: 'center', margin: 0 } }, 'Getting Started With Terraform'),
       h('p', { style: { margin: 0 } }, 'by Luke Kaalim'),
       h('img', { src: './terraform-vertical-color.png', height: '300', width: '300' }),
-      h('a', { href: 'https://github.com/lukekaalim/Getting-Started-With-Terraform' },
-        `https://github.com/lukekaalim/Getting-Started-With-Terraform`),
+      h('a', { href: 'https://lukekaalim.github.io/Getting-Started-With-Terraform/public/' },
+        `https://lukekaalim.github.io/Getting-Started-With-Terraform/public/`),
     ]),
   ];
 };

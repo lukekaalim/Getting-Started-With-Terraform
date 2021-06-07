@@ -12,6 +12,10 @@ export const CODE_LEFT = 'ArrowLeft';
 export const CODE_RIGHT = 'ArrowRight';
 export const CODE_A = 'KeyA';
 export const CODE_D = "KeyD";
+export const CODE_UP = 'ArrowUp';
+export const CODE_DOWN = 'ArrowDown';
+export const CODE_W = 'KeyW';
+export const CODE_S = "KeyS";
 
 const minmax = (min, max, v) => Math.min(max, Math.max(v, min));
 
@@ -49,4 +53,23 @@ export const useSlideIndex = (
   }, []);
 
   return [slideIndex, setRangedSlideIndex];
+};
+
+export const useSlideState = (
+  maxIndex/*: number*/,
+)/*: number*/ => {
+  const [slideState, setSlideState] = useState/*:: <number>*/(0);
+  useKeydown(event => {
+    if (document.activeElement === document.body)
+      switch (event.code) {
+        case CODE_UP:
+        case CODE_W:
+          return setSlideState(i => minmax(0, maxIndex, i - 1))
+        case CODE_DOWN:
+        case CODE_S:
+          return setSlideState(i => minmax(0, maxIndex, i + 1))
+      }
+  }, []);
+
+  return slideState;
 };
